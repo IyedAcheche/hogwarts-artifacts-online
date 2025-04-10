@@ -1,0 +1,194 @@
+{
+  "info": {
+    "name": "Hogwarts Artifacts Online API",
+    "description": "Collection for testing the Hogwarts Artifacts Online API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Wizards",
+      "item": [
+        {
+          "name": "Find All Wizards",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/wizards",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "wizards"]
+            },
+            "description": "Get all wizards"
+          }
+        },
+        {
+          "name": "Find Wizard by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/wizards/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "wizards", "1"]
+            },
+            "description": "Get a wizard by ID"
+          }
+        },
+        {
+          "name": "Create Wizard",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/api/v1/wizards",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "wizards"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Hermione Granger\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new wizard"
+          }
+        },
+        {
+          "name": "Update Wizard",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{base_url}}/api/v1/wizards/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "wizards", "1"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Wizard Name\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update an existing wizard"
+          }
+        },
+        {
+          "name": "Delete Wizard",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/v1/wizards/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "wizards", "1"]
+            },
+            "description": "Delete a wizard by ID"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Artifacts",
+      "item": [
+        {
+          "name": "Find All Artifacts",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts"]
+            },
+            "description": "Get all artifacts"
+          }
+        },
+        {
+          "name": "Find Artifact by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts/1250808601744904192",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts", "1250808601744904192"]
+            },
+            "description": "Get an artifact by ID"
+          }
+        },
+        {
+          "name": "Create Artifact",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Deluminator\",\n    \"description\": \"A Deluminator is a device invented by Albus Dumbledore that resembles a cigarette lighter. It is used to remove or absorb (as well as return) light from any source to provide cover to the user.\",\n    \"imageUrl\": \"https://example.com/deluminator.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Create a new artifact"
+          }
+        },
+        {
+          "name": "Update Artifact",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts/1250808601744904192",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts", "1250808601744904192"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Updated Artifact Name\",\n    \"description\": \"Updated description\",\n    \"imageUrl\": \"https://example.com/updated-image.jpg\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "description": "Update an existing artifact"
+          }
+        },
+        {
+          "name": "Delete Artifact",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts/1250808601744904192",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts", "1250808601744904192"]
+            },
+            "description": "Delete an artifact by ID"
+          }
+        },
+        {
+          "name": "Assign Artifact to Wizard",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "{{base_url}}/api/v1/artifacts/1250808601744904192/owner/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "artifacts", "1250808601744904192", "owner", "1"]
+            },
+            "description": "Assign an artifact to a wizard"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8081",
+      "type": "string"
+    }
+  ]
+} 
